@@ -1,12 +1,12 @@
 import { v4 as uuidV4 } from "uuid";
 
-import { Specification } from "../../model/Specification";
+import { Specification } from "../../entities/Specification";
 import {
-  ISpecificationRepository,
+  ISpecificationsRepository,
   ICreateSpecificationDTO,
 } from "../ISpecificationsRepository";
 
-class SpecificationsRepository implements ISpecificationRepository {
+class SpecificationsRepository implements ISpecificationsRepository {
   private specifications: Specification[] = [];
 
   public static INSTANCE;
