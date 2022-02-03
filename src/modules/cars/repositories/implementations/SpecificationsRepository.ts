@@ -1,4 +1,3 @@
-import { v4 as uuidV4 } from "uuid";
 import { getRepository, Repository } from "typeorm"
 
 import { Specification } from "../../entities/Specification";
