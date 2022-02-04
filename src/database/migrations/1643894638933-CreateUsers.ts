@@ -4,16 +4,20 @@ export class CreateUsers1643894638933 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
       queryRunner.createTable(new Table({
-        name: "Users",
+        name: "users",
         columns: [
           {
             name: "id",
             type: "uuid",
-            isPrimary: true
           },
           {
             name: "name",
             type: "varchar",
+          },
+          {
+            name: "username",
+            type: "varchar",
+            isUnique: true
           },
           {
             name: "password",
@@ -28,8 +32,9 @@ export class CreateUsers1643894638933 implements MigrationInterface {
             type: "varchar",
           },
           {
-            name: "admin",
+            name: "isAdmin",
             type: "boolean",
+            default: false,
           },
           {
             name: "created_at",
@@ -42,6 +47,7 @@ export class CreateUsers1643894638933 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
+      queryRunner.dropTable("Users")
     }
 
 }
