@@ -33,6 +33,10 @@ class UsersRepository implements IUsersRepository {
     const users = await this.repository.find()
     return users
   }
+
+  async remove(id: string): Promise<void> {
+    await this.repository.delete({id})
+  }
 }
 
 export {UsersRepository}
