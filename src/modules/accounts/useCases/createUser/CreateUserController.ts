@@ -13,7 +13,7 @@ class CreateUserController {
     } = request.body
 
     const createUserUseCase = container.resolve(CreateUserUseCase)
-    try {
+
       await createUserUseCase.execute({  
         name,
         password,
@@ -21,11 +21,7 @@ class CreateUserController {
         driver_license,
       })
     
-      return response.status(201).send()
-    } catch (error) {
-      return response.status(400).json({error: error.message})
-    }
-    
+      return response.status(201).send()   
   }
 }
 
