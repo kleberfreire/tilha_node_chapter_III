@@ -7,8 +7,6 @@ interface IUsersRepository {
   findByEmail(email: string) : Promise<User>
   findById(id: string) : Promise<User>
   list() : Promise<User[]>
-  remove(id:string): Promise<void>
-
 }
 
 export { IUsersRepository } 
