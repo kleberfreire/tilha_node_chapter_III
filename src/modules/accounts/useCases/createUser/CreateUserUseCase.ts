@@ -18,6 +18,7 @@ class CreateUserUseCase {
     name,
     password,
     email,
+    avatar,
     driver_license,
   }: ICreateUserDTO):Promise<void> {
   
@@ -32,6 +33,7 @@ class CreateUserUseCase {
       name,
       password: encryptedPassword,
       email,
+      avatar,
       driver_license,
     });
   }

@@ -28,6 +28,11 @@ export class CreateUsers1643894638933 implements MigrationInterface {
             type: "varchar",
           },
           {
+            name: "avatar",
+            type: "varchar",
+            isNullable: true,
+          },
+          {
             name: "isAdmin",
             type: "boolean",
             default: false,
@@ -37,8 +42,7 @@ export class CreateUsers1643894638933 implements MigrationInterface {
             type: "timestamp",
             default:"now()",
           }
-        ]
-        
+        ]       
       }))
     }
 
